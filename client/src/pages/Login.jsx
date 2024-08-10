@@ -6,23 +6,22 @@ import Button from "../components/Button/Button";
 import { useSelector } from "react-redux";
 
 const Login = () => {
-  // const { user } = useSelector((state) => state.auth);
-  const [user, setUser] = useState("erfan");
+  const { user } = useSelector((state) => state.auth);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const submitHandler = async (data) => {
     console.log("submit");
   };
 
-  // useEffect(() => {
-  //   user && navigate("/dashboard");
-  // }, [user]);
+  useEffect(() => {
+    user && navigate("/dashboard");
+  }, [user]);
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6]">
